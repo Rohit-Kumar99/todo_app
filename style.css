@@ -58,21 +58,21 @@ body {
 }
 
 /* Container */
-.container{
+.container {
   background: transparent;
   outline: 2px solid black;
   border-radius: var(--card-border-radius);
   width: 40rem;
   height: 30rem;
   box-shadow: var(--box-shadow);
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 /* Heading */
-.heading{
-    margin:1rem 0;
+.heading {
+  margin: 1rem 0;
 }
 
 h1 {
@@ -81,23 +81,22 @@ h1 {
   color: var(--color-white);
 }
 
-.heading h1 span{
-    color:var(--color-warning);
+.heading h1 span {
+  color: var(--color-warning);
 }
 
-.todo-body{
-width:90%;
-height:80%;
-background-color: #6517eb;
-border-radius:var(--border-radius-1);
-overflow-y:auto;
+.todo-body {
+  width: 90%;
+  height: 80%;
+  background-color: #6517eb;
+  border-radius: var(--border-radius-1);
+  overflow-y: auto;
 }
 
-.todo-body h1{
- font-size:1.3rem;
- margin-left:1rem;
+.todo-body h1 {
+  font-size: 1.3rem;
+  margin-left: 1rem;
 }
-
 
 /* add-todo */
 .add-todo {
@@ -133,35 +132,61 @@ overflow-y:auto;
   background: var(--color-info-light);
 }
 
-.todo-task-container{
-    padding: 1rem;
-    
+.todo-task-container {
+  padding: 1rem;
 }
 
 .task{
-    background:var(--color-background);
+    background: var(--color-background);
     display:flex;
-    padding: 1rem;
-    border-radius: var(--border-radius-1);
-    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items:flex-start;
+    gap:1rem;
+    padding:1rem;
+    border-radius:var(--border-radius-1);
+    margin-bottom:1rem;
 }
 
-.task .left{
-    display:flex;
-    gap:0.7rem;
+.task-content{
     flex:1;
 }
 
-.task .todo-date{
-    display:flex;
-    align-items: center;
-    gap:0.5rem;
-    flex:1
+.todo_task{
+    font-size:1rem;
+    margin-bottom:0.8rem;
 }
 
-.task .options span{
+.meta{
+    display:flex;
+    flex-direction:column;
+    gap:0.4rem;
+}
+
+.todo-date{
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    font-size:0.8rem;
+    color:var(--color-dark-variant);
+}
+
+.todo-date .material-icons-sharp{
+    font-size:1rem;
+}
+
+.options{
+    display:flex;
+    gap:0.5rem;
+}
+
+.options span{
     cursor:pointer;
     font-size:1.2rem;
+}
+
+.task .todo-date h4{
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 /* ======= RESPONSIVENESS ======= */
@@ -203,7 +228,6 @@ overflow-y:auto;
 
 /* ===========Mobile============== */
 @media (max-width: 480px) {
-
   html {
     font-size: 12px;
   }
@@ -226,7 +250,13 @@ overflow-y:auto;
   }
 
   .task {
+    flex-direction: column;
     padding: 0.8rem;
+  }
+
+  .options{
+    width:100%;
+    justify-content:flex-end;
   }
 
   .task .options span {
