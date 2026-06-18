@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700,800&display=swap");
+
+/* .........Root Variable........... */
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: poppins, sans-serif;
+  font-size: 0.88rem;
+  overflow-x: hidden;
+  color: var(--color-dark);
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  padding: 1rem;
+  height: auto;
+}
+
+/* Container */
+.container{
+  background: transparent;
+  outline: 2px solid black;
+  border-radius: var(--card-border-radius);
+  width: 40rem;
+  height: 30rem;
+  box-shadow: var(--box-shadow);
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+/* Heading */
+.heading{
+    margin:1rem 0;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--color-white);
+}
+
+.heading h1 span{
+    color:var(--color-warning);
+}
+
+.todo-body{
+width:90%;
+height:80%;
+background-color: #6517eb;
+border-radius:var(--border-radius-1);
+overflow-y:auto;
+}
+
+.todo-body h1{
+ font-size:1.3rem;
+ margin-left:1rem;
+}
+
+
+/* add-todo */
+.add-todo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+}
+
+.add-todo input {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-info-light);
+  border-radius: 10px;
+  background: var(--color-background);
+  color: var(--color-dark);
+  font-family: poppins, sans-serif;
+  font-size: 1rem;
+  transition: border 300ms ease;
+  flex: 1;
+}
+
+.add-todo button {
+  background: var(--color-background);
+  border-radius: 10px;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: background 300ms ease;
+}
+
+.add-todo button:hover {
+  background: var(--color-info-light);
+}
+
+.todo-task-container{
+    padding: 1rem;
+    
+}
+
+.task{
+    background:var(--color-background);
+    display:flex;
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+    margin-bottom: 1rem;
+}
+
+.task .left{
+    display:flex;
+    gap:0.7rem;
+    flex:1;
+}
+
+.task .todo-date{
+    display:flex;
+    align-items: center;
+    gap:0.5rem;
+    flex:1
+}
+
+.task .options span{
+    cursor:pointer;
+    font-size:1.2rem;
+}
+
+/* ======= RESPONSIVENESS ======= */
+/* =====================Tablets==================== */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    height: 80vh;
+  }
+
+  .heading h1 {
+    font-size: 1.6rem;
+  }
+
+  .todo-body {
+    width: 95%;
+    height: 85%;
+  }
+
+  .add-todo {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .add-todo input {
+    width: 100%;
+  }
+
+  .add-todo button {
+    width: 100%;
+  }
+
+  .task .options {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+}
+
+/* ===========Mobile============== */
+@media (max-width: 480px) {
+
+  html {
+    font-size: 12px;
+  }
+
+  .container {
+    width: 95%;
+    height: 85vh;
+  }
+
+  .heading h1 {
+    font-size: 1.4rem;
+  }
+
+  .todo-body {
+    padding: 0.5rem;
+  }
+
+  .add-todo {
+    padding: 0.5rem;
+  }
+
+  .task {
+    padding: 0.8rem;
+  }
+
+  .task .options span {
+    font-size: 1rem;
+  }
+}
